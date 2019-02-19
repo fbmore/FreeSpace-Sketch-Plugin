@@ -1,0 +1,25 @@
+{
+  "author" : "",
+  "commands" : [
+    {
+      "script" : "script.cocoascript",
+      "name" : "FreeSpace",
+      "shortcut" : "command option shift s",
+      "handlers" : {
+        "run" : "onRun"
+      },
+      "identifier" : "com.bohemiancoding.sketch.runscriptidentifier"
+    }
+  ],
+  "menu" : {
+    "title" : "FreeSpace",
+    "items" : [
+      "com.bohemiancoding.sketch.runscriptidentifier"
+    ]
+  },
+  "identifier" : "com.example.sketch.908919fd-5574-4d09-8e54-8537244c28cc",
+  "version" : "1.0",
+  "description" : "",
+  "authorEmail" : "",
+  "name" : "FreeSpace"
+}

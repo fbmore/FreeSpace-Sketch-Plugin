@@ -1,0 +1,48 @@
+          var onRun = function(context) {
+          var sketch = require('sketch')
+var ui = require('sketch/ui')
+
+var	document = sketch.getSelectedDocument();
+
+var data = document.sketchObject.documentData();
+var page = document.selectedPage;
+var selection = document.selectedLayers;
+// var page = document.selectedPage;
+var selection = document.selectedLayers;
+// selection.layers[0].overrides[1].affectedLayer.text.value = "hello"
+var doc = context.document;
+
+console.log(selection)
+
+if (selection) {
+  ui.message("👉 👉 👉 Please select a symbol, layer, group or artboard! 👈 👈 👈");
+}
+
+
+result = [] + [doc askForUserInput:"How much space between the selected elements?\n\nExamples:\n\n– Enter \'16\' to stack elements vertically by default.\n\n– Enter \'-16\' to stack elements horizontally" initialValue:""];
+
+
+
+selection.layers[0].frame.x = 0
+selection.layers[0].frame.y = 0
+
+
+if (!result[0].includes('-')){
+
+  for (j = 1; j < selection.layers.length; ++j){
+    selection.layers[j].frame.x = 0;
+    selection.layers[j].frame.y = selection.layers[j-1].frame.y + selection.layers[j-1].frame.height + Number(result.replace("-",""));
+}
+
+} else {
+
+  for (j = 1; j < selection.layers.length; ++j){
+
+selection.layers[j].frame.y = 0;
+selection.layers[j].frame.x = selection.layers[j-1].frame.x + selection.layers[j-1].frame.width + Number(result.replace("-",""));
+  }
+}
+
+
+
+          };
